@@ -30,15 +30,30 @@ namespace csc232
     {
     public:
         // TODO: Task 2 - Step 2: Declare default constructor.
+        /**
+         * @brief Default constructor
+         */
+        memory_cell( );
 
-        // TODO: Task 2 - Step 3: Override the default destructor.
+        /**
+         * @brief Default constructor
+         */
+        ~memory_cell( ) override = default;
 
-        // TODO: Task 2 - Step 4: Declare/override the read() method
+        /**
+         * @brief Override te read() method to return the stored value.
+         * @return The value stored in the memory cell.
+         */
+        auto read( ) const -> object override;
 
-        // TODO: Task 2 - Step 5: Declare/override the write() method
+        /**
+         * @copydoc cell::write
+         */
+        auto write( const object &value ) -> void override;
 
     private:
         // TODO: Task 2 - Step 6: Declare data member
+        object value_;
     };
 
 } // csc232
